@@ -1,7 +1,9 @@
 DKScrollingTabController
-============
+========================
 
 A Scrolling Tab iOS Control
+
+![](Assets/demo.gif)
 
 # Installation
 Add the files in the DKScrollingTabController folder to your project.
@@ -13,27 +15,28 @@ Add the files in the DKScrollingTabController folder to your project.
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Simple";
-        
-        self.view.backgroundColor = [UIColor orangeColor];
-        
+        // Add controller as a child view controller (standard view controller containment)
         DKScrollingTabController *tabController = [[DKScrollingTabController alloc] init];
-        tabController.delegate = self;
         [self addChildViewController:tabController];
         [tabController didMoveToParentViewController:self];
         [self.view addSubview:tabController.view];
+        
+        // Customize the tab controller (more options in DKScrollingTabController.h or check the demo)
         tabController.view.frame = CGRectMake(0, 20, 320, 40);
         tabController.buttonPadding = 23;
         tabController.selection = @[@"zero", @"one", @"two", @"three", @"four",];
-
+        
+        // Set the delegate (conforms to DKScrollingTabControllerDelegate)
+        tabController.delegate = self;
     }
     return self;
 }
 
 
-- (void)TabControllerSelectionDelegate:(NSUInteger)selection {
-    NSLog(@"Selection controller action button tag=%d",selection);
-    
+#pragma mark - DKScrollingTabControllerDelegate
+
+- (void)DKScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
+    NSLog(@"Selection controller action button with index=%d",selection);
 }
 
 ```
@@ -49,12 +52,13 @@ DKScrollingTabController includes a sample project in the Demo folder.
 # TODO
 
 - Unit tests
+- Blur without using `UIToolbar`
 
 
 # Say Hi
 - [github.com/dkhamsing](https://github.com/dkhamsing)
-- [twitter.com/alldonegoodbye](https://twitter.com/alldonegoodbye)
-- [contact](http://alldonegoodbye.tumblr.com/ask)
+- [twitter.com/dkhamsing](https://twitter.com/dkhamsing)
+- [contact](http://dkhamsing.tumblr.com/ask)
 
 # License
 DKScrollingTabController is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
