@@ -1,7 +1,7 @@
 DKScrollingTabController
 ========================
 
-A Scrolling Tab iOS Control
+A scrolling tab controller alternative to `UISegmentedControl`.
 
 ![](Assets/demo.gif)
 
@@ -11,8 +11,7 @@ Add the files in the DKScrollingTabController folder to your project.
 # Usage
 
 ```  objc
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Add controller as a child view controller (standard view controller containment)
@@ -44,16 +43,14 @@ Add the files in the DKScrollingTabController folder to your project.
 # Demo
 DKScrollingTabController includes a sample project in the Demo folder.
 
-
 # Compatibility
 - This project uses ARC.
 - This project was tested with iOS 6.1 and iOS 7.
 
 # TODO
-
+- Better demo
 - Unit tests
 - Blur without using `UIToolbar`
-
 
 # Say Hi
 - [github.com/dkhamsing](https://github.com/dkhamsing)
