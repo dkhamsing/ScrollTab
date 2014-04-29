@@ -40,6 +40,10 @@ Add the files in the DKScrollingTabController folder to your project.
 
 ```
 
+## Customization
+- Change the controller's padding, font, colors and [more](https://github.com/dkhamsing/DKScrollingTabController/blob/master/DKScrollingTabController/DKScrollingTabController.h).
+- Set `layoutIsVertical` to YES to show the controller vertically.
+
 # Demo
 DKScrollingTabController includes a sample project in the Demo folder.
 
