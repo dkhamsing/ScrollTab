@@ -29,6 +29,21 @@
     return self;
 }
 
+// Enables usage in storyboards.
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.toolbar = [[UIToolbar alloc] init];
+    [self.view addSubview:self.toolbar];
+    
+    self.buttonsScrollView = [[UIScrollView alloc] init];
+    self.buttonsScrollView.scrollsToTop = NO;
+    [self.view addSubview:self.buttonsScrollView];
+    
+    self.indicatorView = [[UIView alloc] init];
+    [self.buttonsScrollView addSubview:self.indicatorView];
+}
 
 - (void)setSelection:(NSArray *)selection {
     _selection = selection;
