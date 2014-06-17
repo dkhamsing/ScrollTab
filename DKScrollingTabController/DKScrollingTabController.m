@@ -58,6 +58,12 @@
         _unselectedBackgroundColor = [UIColor clearColor];
     }
     
+    // Remove any existing buttons.
+    for (UIButton *button in self.buttons)
+    {
+        [button removeFromSuperview];
+    }
+    
     self.buttons = [[NSMutableArray alloc] init];
     
     CGFloat inset = _buttonInset;
