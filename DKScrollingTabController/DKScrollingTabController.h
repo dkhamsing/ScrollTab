@@ -39,6 +39,9 @@
 @property (nonatomic,assign) BOOL underlineIndicator;
 @property (nonatomic,strong) UIColor *underlineIndicatorColor;
 
+// Set starting index.
+@property (nonatomic, assign) NSInteger startingIndex;
+
 // Number of lines for select control items (buttons)
 @property (nonatomic,assign) NSInteger numberOfLines;
 

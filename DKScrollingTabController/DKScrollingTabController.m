@@ -25,6 +25,8 @@
         
         self.indicatorView = [[UIView alloc] init];
         [self.buttonsScrollView addSubview:self.indicatorView];
+        
+        self.startingIndex = 0;
     }
     return self;
 }
@@ -43,6 +45,8 @@
     
     self.indicatorView = [[UIView alloc] init];
     [self.buttonsScrollView addSubview:self.indicatorView];
+    
+    self.startingIndex = 0;
 }
 
 - (void)setSelection:(NSArray *)selection {
@@ -148,7 +152,7 @@
         }
     }
     
-    [self dk_controlSelect:self.buttons[0]];
+    [self dk_controlSelect:self.buttons[self.startingIndex]];
 }
 
 
