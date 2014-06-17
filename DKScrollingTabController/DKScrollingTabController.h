@@ -38,6 +38,7 @@
 @property (nonatomic,strong) UIColor *unselectedBackgroundColor;
 @property (nonatomic,assign) BOOL underlineIndicator;
 @property (nonatomic,strong) UIColor *underlineIndicatorColor;
+@property (nonatomic,assign) CGFloat underLineIndicatorOffset;
 
 // Set starting index.
 @property (nonatomic, assign) NSInteger startingIndex;
