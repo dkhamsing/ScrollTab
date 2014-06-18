@@ -41,7 +41,7 @@
         leftTabController.unselectedTextColor = [UIColor grayColor];
         leftTabController.unselectedBackgroundColor = [UIColor clearColor];
         leftTabController.startingIndex = 2;
-        leftTabController.underLineIndicatorOffset = 54;
+        leftTabController.buttonTitleEdgeInstes = UIEdgeInsetsMake(10, 0, 0, 0);
         
         leftTabController.selection = @[@"PLACE\n0", @"PLACE\n0", @"PLACE\n0", @"PLACE\n0" ];
         [leftTabController setButtonName:@"TWEETS\n400" atIndex:0];

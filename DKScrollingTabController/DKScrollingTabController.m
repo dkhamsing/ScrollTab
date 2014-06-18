@@ -43,6 +43,7 @@
     
     self.underLineIndicatorOffset = 0;
     self.startingIndex = 0;
+    self.buttonTitleEdgeInstes = UIEdgeInsetsZero;
 }
 
 - (void)setSelection:(NSArray *)selection {
@@ -113,6 +114,7 @@
         //MyLog(@"button %@ = %@",selection[idx], button);
         button.tag = idx;
         button.titleLabel.font = selectionFont;
+        button.titleEdgeInsets = self.buttonTitleEdgeInstes;
         
         if (self.numberOfLines>1) {
             button.titleLabel.numberOfLines = self.numberOfLines;
