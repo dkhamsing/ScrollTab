@@ -135,7 +135,7 @@
      self.indicatorView.backgroundColor = underlineColor;
     [self.buttonsScrollView bringSubviewToFront:self.indicatorView];
     
-    if (!_layoutIsVertical) {
+    if (!_layoutIsVertical && selection.count > 0) {
         UIButton *button = self.buttons[selection.count-1];
         [self.buttonsScrollView setContentSize:CGSizeMake(button.frame.origin.x+button.frame.size.width +_firstButtonInset +inset, frame2.size.height)];
         
@@ -150,7 +150,10 @@
         }
     }
     
-    [self dk_controlSelect:self.buttons[self.startingIndex]];
+    if (self.buttons.count > self.startingIndex)
+    {
+        [self dk_controlSelect:self.buttons[self.startingIndex]];
+    }
 }
 
 
