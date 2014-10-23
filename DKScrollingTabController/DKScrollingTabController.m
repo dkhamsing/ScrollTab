@@ -16,19 +16,35 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {        
-        self.toolbar = [[UIToolbar alloc] init];
-        [self.view addSubview:self.toolbar];
-
-        self.buttonsScrollView = [[UIScrollView alloc] init];
-        self.buttonsScrollView.scrollsToTop = NO;
-        [self.view addSubview:self.buttonsScrollView];
-        
-        self.indicatorView = [[UIView alloc] init];
-        [self.buttonsScrollView addSubview:self.indicatorView];
+        [self commonInitialization];
     }
     return self;
 }
 
+// Enables usage in storyboards.
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self commonInitialization];
+}
+
+- (void)commonInitialization
+{
+    self.toolbar = [[UIToolbar alloc] init];
+    [self.view addSubview:self.toolbar];
+    
+    self.buttonsScrollView = [[UIScrollView alloc] init];
+    self.buttonsScrollView.scrollsToTop = NO;
+    [self.view addSubview:self.buttonsScrollView];
+    
+    self.indicatorView = [[UIView alloc] init];
+    [self.buttonsScrollView addSubview:self.indicatorView];
+    
+    self.underLineIndicatorOffset = 0;
+    self.startingIndex = 0;
+    self.buttonTitleEdgeInstes = UIEdgeInsetsZero;
+}
 
 - (void)setSelection:(NSArray *)selection {
     _selection = selection;
@@ -41,6 +57,12 @@
         self.view.backgroundColor = [UIColor clearColor];
         _selectedBackgroundColor = [UIColor clearColor];
         _unselectedBackgroundColor = [UIColor clearColor];
+    }
+    
+    // Remove any existing buttons.
+    for (UIButton *button in self.buttons)
+    {
+        [button removeFromSuperview];
     }
     
     self.buttons = [[NSMutableArray alloc] init];
@@ -92,6 +114,7 @@
         //MyLog(@"button %@ = %@",selection[idx], button);
         button.tag = idx;
         button.titleLabel.font = selectionFont;
+        button.titleEdgeInsets = self.buttonTitleEdgeInstes;
         
         if (self.numberOfLines>1) {
             button.titleLabel.numberOfLines = self.numberOfLines;
@@ -112,12 +135,25 @@
      self.indicatorView.backgroundColor = underlineColor;
     [self.buttonsScrollView bringSubviewToFront:self.indicatorView];
     
-    if (!_layoutIsVertical) {
+    if (!_layoutIsVertical && selection.count > 0) {
         UIButton *button = self.buttons[selection.count-1];
         [self.buttonsScrollView setContentSize:CGSizeMake(button.frame.origin.x+button.frame.size.width +_firstButtonInset +inset, frame2.size.height)];
+        
+        // If content's width is smaller than the view's width, put it in the center.
+        if (self.buttonsScrollView.contentSize.width < self.view.frame.size.width)
+        {
+            [self.buttonsScrollView setFrame:CGRectMake(self.buttonsScrollView.frame.origin.x,
+                                                        self.buttonsScrollView.frame.origin.y,
+                                                        self.buttonsScrollView.contentSize.width,
+                                                        self.buttonsScrollView.frame.size.height)];
+            self.buttonsScrollView.center = self.view.center;
+        }
     }
     
-    [self dk_controlSelect:self.buttons[0]];
+    if (self.buttons.count > self.startingIndex)
+    {
+        [self dk_controlSelect:self.buttons[self.startingIndex]];
+    }
 }
 
 
@@ -245,14 +281,14 @@
     if (_underlineIndicator) {
         if (self.indicatorView.frame.size.width == 0) {
             CGRect buttonFrame = button.frame;
-            buttonFrame.origin.y = frame.size.height - 2;
+            buttonFrame.origin.y = frame.size.height - 2 - self.underLineIndicatorOffset;
             buttonFrame.size.height = 2;
             self.indicatorView.frame = buttonFrame;
         }
         else {
             [UIView animateWithDuration:0.3f animations:^{
                 CGRect buttonFrame = button.frame;
-                buttonFrame.origin.y = frame.size.height - 2;
+                buttonFrame.origin.y = frame.size.height - 2 - self.underLineIndicatorOffset;
                 buttonFrame.size.height = 2;
                 self.indicatorView.frame = buttonFrame;
             }];
