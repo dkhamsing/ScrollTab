@@ -139,15 +139,16 @@
         UIButton *button = self.buttons[selection.count-1];
         [self.buttonsScrollView setContentSize:CGSizeMake(button.frame.origin.x+button.frame.size.width +_firstButtonInset +inset, frame2.size.height)];
         
-        // If content's width is smaller than the view's width, put it in the center.
-        if (self.buttonsScrollView.contentSize.width < self.view.frame.size.width)
-        {
-            [self.buttonsScrollView setFrame:CGRectMake(self.buttonsScrollView.frame.origin.x,
-                                                        self.buttonsScrollView.frame.origin.y,
-                                                        self.buttonsScrollView.contentSize.width,
-                                                        self.buttonsScrollView.frame.size.height)];
-            self.buttonsScrollView.center = self.view.center;
-        }
+        //TODO: removed for now, this breaks demo's 5th tab
+//        // If content's width is smaller than the view's width, put it in the center.
+//        if (self.buttonsScrollView.contentSize.width < self.view.frame.size.width)
+//        {
+//            [self.buttonsScrollView setFrame:CGRectMake(self.buttonsScrollView.frame.origin.x,
+//                                                        self.buttonsScrollView.frame.origin.y,
+//                                                        self.buttonsScrollView.contentSize.width,
+//                                                        self.buttonsScrollView.frame.size.height)];
+//            self.buttonsScrollView.center = self.view.center;
+//        }
     }
     
     if (self.buttons.count > self.startingIndex)
