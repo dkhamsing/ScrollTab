@@ -39,7 +39,7 @@
 @property (nonatomic,assign) BOOL underlineIndicator;
 @property (nonatomic,strong) UIColor *underlineIndicatorColor;
 @property (nonatomic,assign) CGFloat underLineIndicatorOffset;
-@property (nonatomic,assign) UIEdgeInsets buttonTitleEdgeInstes;
+@property (nonatomic,assign) UIEdgeInsets buttonTitleEdgeInsets;
 
 // Set starting index.
 @property (nonatomic, assign) NSInteger startingIndex;
