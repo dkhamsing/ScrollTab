@@ -49,12 +49,7 @@ DKScrollingTabController includes a sample project in the Demo folder.
 
 # Compatibility
 - This project uses ARC.
-- This project was tested with iOS 6.1 and iOS 7.
-
-# TODO
-- Better demo
-- Unit tests
-- Blur without using `UIToolbar`
+- This project was tested with iOS 7.
 
 # Say Hi
 - [github.com/dkhamsing](https://github.com/dkhamsing)
