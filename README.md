@@ -14,7 +14,7 @@ Add the files in the DKScrollingTabController folder to your project.
 
 ``` ruby
 platform :ios, '7.0'
-pod "DKScrollingTabController" 
+pod 'DKScrollingTabController'
 ```
 
 # Usage
