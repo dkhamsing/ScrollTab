@@ -22,9 +22,23 @@
 
 @interface DKScrollingTabController : UIViewController
 
+/**
+ List of buttons.
+ */
 @property (nonatomic,strong) NSMutableArray *buttons;
+
+
+/**
+ List of tab options, most of logic in the setter of this property.
+ */
 @property (nonatomic,strong) NSArray *selection;
+
+
+/**
+ Delegate.
+ */
 @property (nonatomic,assign) id delegate;
+
 
 // Options to customize the selection controller
 @property (nonatomic,strong) UIScrollView *buttonsScrollView;
@@ -41,17 +55,33 @@
 @property (nonatomic,assign) CGFloat underLineIndicatorOffset;
 @property (nonatomic,assign) UIEdgeInsets buttonTitleEdgeInsets;
 
-// Set starting index.
+/**
+ Set starting index.
+ */
 @property (nonatomic, assign) NSInteger startingIndex;
 
-// Number of lines for select control items (buttons)
+
+/**
+ Number of lines for select control items (buttons)
+ */
 @property (nonatomic,assign) NSInteger numberOfLines;
 
-// Setting this changes the control layout to be vertical (no scrolling)
+
+/**
+ Setting this changes the control layout to be vertical (no scrolling)
+ */
 @property (nonatomic,assign) BOOL layoutIsVertical;
 
-// Experimental
+
+/**
+ Toolbar (experimental).
+ */
 @property (nonatomic,strong) UIToolbar *toolbar;
+
+
+/**
+ Translucency (experimental).
+ */
 @property (nonatomic,assign) BOOL translucent;
 
 
@@ -61,7 +91,13 @@
  */
 - (void)addTopBorder:(UIColor*)color;
 
+
+/**
+ Add a bottom border of 1 pixel.
+ @param color Color of the top border.
+ */
 - (void)addBottomBorder:(UIColor*)color;
+
 
 /**
  Select a button (the delegate is not called).
@@ -86,7 +122,7 @@
 
 /**
  Set a button title and title label.
- @param attributedString Attribuetd string of the button.
+ @param attributedString Attributed string of the button.
  @param index Index of the button.
  */
 - (void)setButtonAttributedString:(NSAttributedString*)attributedString atIndex:(NSUInteger)index;
