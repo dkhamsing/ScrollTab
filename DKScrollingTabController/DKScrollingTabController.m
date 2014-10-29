@@ -16,35 +16,11 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {        
-        [self commonInitialization];
+        [self dk_commonInitialization];
     }
     return self;
 }
 
-// Enables usage in storyboards.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [self commonInitialization];
-}
-
-- (void)commonInitialization
-{
-    self.toolbar = [[UIToolbar alloc] init];
-    [self.view addSubview:self.toolbar];
-    
-    self.buttonsScrollView = [[UIScrollView alloc] init];
-    self.buttonsScrollView.scrollsToTop = NO;
-    [self.view addSubview:self.buttonsScrollView];
-    
-    self.indicatorView = [[UIView alloc] init];
-    [self.buttonsScrollView addSubview:self.indicatorView];
-    
-    self.underLineIndicatorOffset = 0;
-    self.startingIndex = 0;
-    self.buttonTitleEdgeInsets = UIEdgeInsetsZero;
-}
 
 - (void)setSelection:(NSArray *)selection {
     _selection = selection;
@@ -240,6 +216,23 @@
 
 #pragma mark - Private
 
+- (void)dk_commonInitialization {
+    self.toolbar = [[UIToolbar alloc] init];
+    [self.view addSubview:self.toolbar];
+    
+    self.buttonsScrollView = [[UIScrollView alloc] init];
+    self.buttonsScrollView.scrollsToTop = NO;
+    [self.view addSubview:self.buttonsScrollView];
+    
+    self.indicatorView = [[UIView alloc] init];
+    [self.buttonsScrollView addSubview:self.indicatorView];
+    
+    self.underLineIndicatorOffset = 0;
+    self.startingIndex = 0;
+    self.buttonTitleEdgeInsets = UIEdgeInsetsZero;
+}
+
+
 - (void)dk_actionButton:(UIButton*)sender {
     //NSLog(@"Selection controller action button tag=%d",sender.tag);
     [self dk_controlSelect:sender];
@@ -311,6 +304,16 @@
     [self.buttonsScrollView scrollRectToVisible:frame animated:YES];
     
     self.currentButton = button;
+}
+
+
+#pragma mark - View Controller
+
+// Enables usage in storyboards.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self dk_commonInitialization];
 }
 
 
