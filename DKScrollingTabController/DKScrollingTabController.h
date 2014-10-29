@@ -10,9 +10,9 @@
 @protocol DKScrollingTabControllerDelegate <NSObject>
 
 /**
- Returns index tapped.
- controller Controller where tap occured.
- selection Index of the selection.
+ Return index tapped.
+ @param controller Controller where tap occured.
+ @param selection Index of the selection.
  */
 - (void)DKScrollingTabController:(DKScrollingTabController*)controller selection:(NSUInteger)selection;
 
@@ -56,7 +56,7 @@
 
 
 /**
- Adds a top border of 1 pixel (needed to use transluscent option).
+ Add a top border of 1 pixel (needed to use transluscent option).
  @param color Color of the top border.
  */
 - (void)addTopBorder:(UIColor*)color;
@@ -64,14 +64,14 @@
 - (void)addBottomBorder:(UIColor*)color;
 
 /**
- Selects a button (the delegate is not called).
+ Select a button (the delegate is not called).
  @param index Index of the button.
  */
 - (void)selectButtonWithIndex:(NSUInteger)index;
 
 
 /**
- Selects a button and optionally trigger the delegate.
+ Select a button and optionally trigger the delegate.
  @param index Index of the button.
  @param delegate Boolean that determines if the delegate is called.
  */
@@ -79,13 +79,13 @@
 
 
 /**
- Unselects all buttons.
+ Unselect all buttons.
  */
 - (void)selectNone;
 
 
 /**
- Sets a button title and title label.
+ Set a button title and title label.
  @param attributedString Attribuetd string of the button.
  @param index Index of the button.
  */
@@ -93,7 +93,7 @@
 
 
 /**
- Sets a button name.
+ Set a button name.
  @param name Name of the button.
  @param index Index of the button.
  */
