@@ -47,7 +47,7 @@
     
     [selection enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *title = obj ;
-        CGRect frame;
+        CGRect frame = CGRectZero;
         
         if (_layoutIsVertical) {
             frame.size.width = self.view.frame.size.width;
