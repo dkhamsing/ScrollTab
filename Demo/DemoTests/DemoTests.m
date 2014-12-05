@@ -7,9 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "DKScrollingTabController.h"
 
 @interface DemoTests : XCTestCase
-
+@property (nonatomic, strong) DKScrollingTabController *tabController;
+@property (nonatomic) NSInteger numberOfButtons;
 @end
 
 @implementation DemoTests
@@ -18,6 +20,13 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    self.tabController = [[DKScrollingTabController alloc] init];
+    
+    NSArray *buttons = @[@"zero", @"one", @"two", @"three", @"four",];
+    self.tabController.selection = buttons;
+
+    self.numberOfButtons = buttons.count;
 }
 
 - (void)tearDown
@@ -28,7 +37,7 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertEqual(TRUE, self.tabController.buttons.count==self.numberOfButtons);
 }
 
 @end

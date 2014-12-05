@@ -25,6 +25,7 @@
 		CE60F2E718A059A600ED7FA6 /* ViewControllerSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F2E618A059A600ED7FA6 /* ViewControllerSimple.m */; };
 		CE60F36318A1A0D300ED7FA6 /* DKScrollingTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F36218A1A0D300ED7FA6 /* DKScrollingTabController.m */; };
 		CED061FB18FD96FC00178355 /* ViewControllerFancy.m in Sources */ = {isa = PBXBuildFile; fileRef = CED061FA18FD96FC00178355 /* ViewControllerFancy.m */; };
+		CEF60D151A32385B00F59D3E /* DKScrollingTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F36218A1A0D300ED7FA6 /* DKScrollingTabController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF60D151A32385B00F59D3E /* DKScrollingTabController.m in Sources */,
 				CBDFCECF189CD2A000D50106 /* DemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
