@@ -111,7 +111,7 @@
 /**
  Underline indicator offset. The default offset is 0.
  */
-@property (nonatomic,assign) CGFloat underLineIndicatorOffset; //TODO: rename to underlineIndicatorOffset
+@property (nonatomic,assign) CGFloat underlineIndicatorOffset; 
 
 
 /**

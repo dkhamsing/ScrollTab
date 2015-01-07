@@ -227,7 +227,7 @@
     self.indicatorView = [[UIView alloc] init];
     [self.buttonsScrollView addSubview:self.indicatorView];
     
-    self.underLineIndicatorOffset = 0;
+    self.underlineIndicatorOffset = 0;
     self.startingIndex = 0;
     self.buttonTitleEdgeInsets = UIEdgeInsetsZero;
 }
@@ -272,14 +272,14 @@
     if (_underlineIndicator) {
         if (self.indicatorView.frame.size.width == 0) {
             CGRect buttonFrame = button.frame;
-            buttonFrame.origin.y = frame.size.height - 2 - self.underLineIndicatorOffset;
+            buttonFrame.origin.y = frame.size.height - 2 - self.underlineIndicatorOffset;
             buttonFrame.size.height = 2;
             self.indicatorView.frame = buttonFrame;
         }
         else {
             [UIView animateWithDuration:0.3f animations:^{
                 CGRect buttonFrame = button.frame;
-                buttonFrame.origin.y = frame.size.height - 2 - self.underLineIndicatorOffset;
+                buttonFrame.origin.y = frame.size.height - 2 - self.underlineIndicatorOffset;
                 buttonFrame.size.height = 2;
                 self.indicatorView.frame = buttonFrame;
             }];
