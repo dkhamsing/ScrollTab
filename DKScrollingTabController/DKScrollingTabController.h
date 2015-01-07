@@ -6,6 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class DKScrollingTabController;
 @protocol DKScrollingTabControllerDelegate <NSObject>
 
@@ -40,20 +41,84 @@
 @property (nonatomic,assign) id delegate;
 
 
-// Options to customize the selection controller
+/**
+ Scrollview for the buttons.
+ */
 @property (nonatomic,strong) UIScrollView *buttonsScrollView;
+
+
+/**
+ Button inset. The default inset is 0.
+ */
 @property (nonatomic,assign) CGFloat buttonInset;
+
+
+/**
+ First button inset. The default inset is 0.
+ */
 @property (nonatomic,assign) CGFloat firstButtonInset;
+
+
+/**
+ Button padding. The default padding is 0.
+ */
 @property (nonatomic,assign) CGFloat buttonPadding;
+
+
+/**
+ Button font. The default font is `systemFontOfSize` with size 12.
+ */
 @property (nonatomic,strong) UIFont *selectionFont;
+
+
+/**
+ Selected state text color. The default color is blue.
+ */
 @property (nonatomic,strong) UIColor *selectedTextColor;
+
+
+/**
+ Unselected state text color. The default color is gray.
+ */
 @property (nonatomic,strong) UIColor *unselectedTextColor;
+
+
+/**
+ Selected button background color.
+ */
 @property (nonatomic,strong) UIColor *selectedBackgroundColor;
+
+
+/**
+ Unselected button background color. The default color is dark gray.
+ */
 @property (nonatomic,strong) UIColor *unselectedBackgroundColor;
+
+
+/**
+ Selected button background color. The default color is light gray.
+ */
 @property (nonatomic,assign) BOOL underlineIndicator;
+
+
+
+/**
+ Color of underline indicator. The default color is blue.
+ */
 @property (nonatomic,strong) UIColor *underlineIndicatorColor;
-@property (nonatomic,assign) CGFloat underLineIndicatorOffset;
+
+
+/**
+ Underline indicator offset. The default offset is 0.
+ */
+@property (nonatomic,assign) CGFloat underlineIndicatorOffset; 
+
+
+/**
+ Edge insets for the button title. The default is `UIEdgeInsetsZero`.
+ */
 @property (nonatomic,assign) UIEdgeInsets buttonTitleEdgeInsets;
+
 
 /**
  Set starting index.
