@@ -3,7 +3,7 @@ DKScrollingTabController
 
 A scrolling tab controller alternative to `UISegmentedControl`.
 
-[![Build Status](https://travis-ci.org/dkhamsing/BrandColors.svg?branch=master)](https://travis-ci.org/dkhamsing/BrandColors)
+[![Build Status](https://travis-ci.org/dkhamsing/DKScrollingTabController.svg?branch=master)](https://travis-ci.org/dkhamsing/DKScrollingTabController)
 
 ![](Assets/demo.gif)
 
