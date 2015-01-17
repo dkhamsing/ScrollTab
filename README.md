@@ -4,6 +4,9 @@ DKScrollingTabController
 A scrolling tab controller alternative to `UISegmentedControl`.
 
 [![Build Status](https://travis-ci.org/dkhamsing/DKScrollingTabController.svg?branch=master)](https://travis-ci.org/dkhamsing/DKScrollingTabController)
+[![Version](https://img.shields.io/cocoapods/v/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
+[![License](https://img.shields.io/cocoapods/l/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
+[![Platform](https://img.shields.io/cocoapods/p/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
 
 ![](Assets/demo.gif)
 
