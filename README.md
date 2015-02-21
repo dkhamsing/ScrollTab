@@ -69,10 +69,10 @@ DKScrollingTabController includes a sample project in the Demo folder.
 - This project uses ARC.
 - This project was tested with iOS 7.
 
-# Say Hi
+# Contact
 - [github.com/dkhamsing](https://github.com/dkhamsing)
 - [twitter.com/dkhamsing](https://twitter.com/dkhamsing)
-- [contact](http://dkhamsing.tumblr.com/ask)
+- [Send a message](http://dkhamsing.tumblr.com/ask)
 
 # License
 DKScrollingTabController is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
