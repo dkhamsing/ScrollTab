@@ -53,7 +53,7 @@ pod 'DKScrollingTabController'
 #pragma mark - DKScrollingTabControllerDelegate
 
 - (void)DKScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
-    NSLog(@"Selection controller action button with index=%d",selection);
+    NSLog(@"Selection controller action button with index=%@", @(selection));
 }
 
 ```
