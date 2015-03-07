@@ -29,10 +29,8 @@ pod 'DKScrollingTabController'
 ```  objc
 #import "DKScrollingTabController.h" 
 
-//...
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)init {
+    self = [super init];
     if (self) {
         // Add controller as a child view controller (standard view controller containment)
         DKScrollingTabController *tabController = [[DKScrollingTabController alloc] init];
@@ -59,6 +57,8 @@ pod 'DKScrollingTabController'
 }
 
 ```
+
+## Swift 
 
 ``` swift
 class ViewController: UIViewController, DKScrollingTabControllerDelegate {
