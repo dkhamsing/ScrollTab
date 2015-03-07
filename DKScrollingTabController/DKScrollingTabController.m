@@ -163,7 +163,7 @@
     [self dk_controlSelect:button];
         
     if (delegate) {
-        [_delegate DKScrollingTabController:self selection:index];
+        [_delegate ScrollingTabController:self selection:index];
     }
 }
 
@@ -236,7 +236,7 @@
 - (void)dk_actionButton:(UIButton*)sender {
     //NSLog(@"Selection controller action button tag=%d",sender.tag);
     [self dk_controlSelect:sender];
-    [_delegate DKScrollingTabController:self selection:sender.tag];
+    [_delegate ScrollingTabController:self selection:sender.tag];
 }
 
 
