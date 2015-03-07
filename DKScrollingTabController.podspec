@@ -1,7 +1,7 @@
 Pod::Spec.new do |s| 
   s.name         = 'DKScrollingTabController'
 
-  s.version      = '1.1.2'
+  s.version      = '1.2'
 
   s.summary      = 'Scrolling Tab iOS Control.'
 
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
    
   s.platform     = :ios, '7.0'
  
-  s.source       = { :git => 'https://github.com/dkhamsing/DKScrollingTabController.git', :tag => '1.1.2' }
+  s.source       = { :git => 'https://github.com/dkhamsing/DKScrollingTabController.git', :tag => s.version.to_s }
 
   s.source_files  = 'DKScrollingTabController/*'
   
