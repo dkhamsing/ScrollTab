@@ -24,13 +24,13 @@ pod 'DKScrollingTabController'
 
 # Usage
 
+## Objective-C
+
 ```  objc
 #import "DKScrollingTabController.h" 
 
-//...
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+- (id)init {
+    self = [super init];
     if (self) {
         // Add controller as a child view controller (standard view controller containment)
         DKScrollingTabController *tabController = [[DKScrollingTabController alloc] init];
@@ -52,10 +52,37 @@ pod 'DKScrollingTabController'
 
 #pragma mark - DKScrollingTabControllerDelegate
 
-- (void)DKScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
+- (void)ScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
     NSLog(@"Selection controller action button with index=%@", @(selection));
 }
 
+```
+
+## Swift 
+
+``` swift
+class ViewController: UIViewController, DKScrollingTabControllerDelegate {
+
+    let tabController = DKScrollingTabController()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tabController.delegate = self
+                
+        self.addChildViewController(tabController)
+        tabController .didMoveToParentViewController(self)
+        self.view.addSubview(tabController.view)
+        tabController.view.frame = CGRectMake(0, 20, 320, 40)
+        tabController.buttonPadding = 25
+        tabController.selection = ["zero", "one", "two", "three", "four"]
+    }
+        
+    func ScrollingTabController(controller: DKScrollingTabController!, selection: UInt) {
+        print("tapped \(selection) \n")
+    }
+
+}
 ```
 
 ## Customization
@@ -63,11 +90,11 @@ pod 'DKScrollingTabController'
 - Set `layoutIsVertical` to YES to show the controller vertically.
 
 # Demo
-DKScrollingTabController includes a sample project in the Demo folder.
+DKScrollingTabController includes sample projects in the folders Demo-Objc and Demo-Swift.
 
 # Compatibility
 - This project uses ARC.
-- This project was tested with iOS 7.
+- This project was tested with iOS 7 and iOS 8.
 
 # Contact
 - [github.com/dkhamsing](https://github.com/dkhamsing)

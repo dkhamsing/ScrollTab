@@ -1,4 +1,4 @@
 language: objective-c
-xcode_project: Demo/Demo.xcodeproj
+xcode_project: Demo-Objc/Demo.xcodeproj
 xcode_scheme: Demo
 xcode_sdk: iphonesimulator7.0

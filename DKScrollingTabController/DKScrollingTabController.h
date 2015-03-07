@@ -15,7 +15,7 @@
  @param controller Controller where tap occured.
  @param selection Index of the selection.
  */
-- (void)DKScrollingTabController:(DKScrollingTabController*)controller selection:(NSUInteger)selection;
+- (void)ScrollingTabController:(DKScrollingTabController*)controller selection:(NSUInteger)selection;
 
 
 @end

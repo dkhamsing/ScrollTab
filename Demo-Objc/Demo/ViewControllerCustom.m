@@ -100,7 +100,7 @@
 
 #pragma mark - TabControllerDelegate
 
-- (void)DKScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
+- (void)ScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
     CGPoint scrollPoint = CGPointMake(0, selection*100);
     self.numberLabel.text = [NSString stringWithFormat:@"%d", selection];
     [self.scrollView setContentOffset:scrollPoint animated:YES];

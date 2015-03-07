@@ -39,7 +39,7 @@
 
 #pragma mark - TabControllerDelegate
 
-- (void)DKScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
+- (void)ScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
     NSLog(@"Selection controller action button with index=%d",selection);
     
 }
