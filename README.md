@@ -68,14 +68,13 @@ class ViewController: UIViewController, DKScrollingTabControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabController.delegate = self
-                
         self.addChildViewController(tabController)
-        tabController .didMoveToParentViewController(self)
+        tabController.didMoveToParentViewController(self)
         self.view.addSubview(tabController.view)
         tabController.view.frame = CGRectMake(0, 20, 320, 40)
         tabController.buttonPadding = 25
         tabController.selection = ["zero", "one", "two", "three", "four"]
+        tabController.delegate = self
     }
         
     func ScrollingTabController(controller: DKScrollingTabController!, selection: UInt) {
