@@ -15,7 +15,7 @@ A scrolling tab controller alternative to `UISegmentedControl`.
 ## Manual
 Add the files in the DKScrollingTabController folder to your project.
 
-## Cocoapods
+## [CocoaPods](https://cocoapods.org/)
 
 ``` ruby
 platform :ios, '7.0'
