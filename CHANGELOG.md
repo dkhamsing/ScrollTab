@@ -11,7 +11,7 @@ https://github.com/dkhamsing/DKScrollingTabController/releases
 
 ## 1.2
 
-- Rename `-ScrollingTabController:` protocol name
+- Rename `-ScrollingTabController:` protocol
 - Add frame initialization
 - Swift demo
 - Testing
