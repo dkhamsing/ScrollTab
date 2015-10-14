@@ -9,7 +9,7 @@
 #import "ViewControllerVertical.h"
 #import "DKScrollingTabController.h"
 
-@interface ViewControllerVertical ()
+@interface ViewControllerVertical () <DKScrollingTabControllerDelegate>
 
 @end
 
@@ -39,7 +39,7 @@
 
 #pragma mark - DKScrollingTabControllerDelegate
 
-- (void)DKScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
+- (void)ScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
     NSLog(@"Selection controller action button with index=%@", @(selection));
 }
 
