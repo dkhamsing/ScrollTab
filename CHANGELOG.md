@@ -5,7 +5,7 @@ https://github.com/dkhamsing/DKScrollingTabController/releases
 ## 1.2.1
 
 - Add changelog
-- Fix demo
+- Update demos
 - Xcode 7
 - Update documentation
 
