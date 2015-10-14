@@ -53,9 +53,9 @@
 #pragma mark - TabControllerDelegate
 
 - (void)DKScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
-    NSLog(@"Selection controller %@ action button with index=%d",
+    NSLog(@"Selection controller %@ action button with index=%@",
           (controller.view.tag==1 ? @"left":@"right"),
-          selection);
+          @(selection));
 }
 
 
