@@ -102,10 +102,10 @@
 
 - (void)ScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
     CGPoint scrollPoint = CGPointMake(0, selection*100);
-    self.numberLabel.text = [NSString stringWithFormat:@"%d", selection];
+    self.numberLabel.text = [NSString stringWithFormat:@"%@", @(selection)];
     [self.scrollView setContentOffset:scrollPoint animated:YES];
     
-    NSLog(@"Selection controller action button with index=%d and scroll point=%@",selection, NSStringFromCGPoint(scrollPoint));
+    NSLog(@"Selection controller action button with index=%@ and scroll point=%@", @(selection), NSStringFromCGPoint(scrollPoint));
 }
 
 

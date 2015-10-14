@@ -9,9 +9,8 @@
 #import "ViewControllerMultiple.h"
 #import "DKScrollingTabController.h"
 
-@interface ViewControllerMultiple () {
-    
-}
+@interface ViewControllerMultiple () <DKScrollingTabControllerDelegate>
+
 
 @end
 
@@ -52,10 +51,10 @@
 
 #pragma mark - TabControllerDelegate
 
-- (void)DKScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
-    NSLog(@"Selection controller %@ action button with index=%d",
+- (void)ScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
+    NSLog(@"Selection controller %@ action button with index=%@",
           (controller.view.tag==1 ? @"left":@"right"),
-          selection);
+          @(selection));
 }
 
 

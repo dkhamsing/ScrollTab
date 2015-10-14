@@ -4,7 +4,7 @@ DKScrollingTabController
 A scrolling tab controller alternative to `UISegmentedControl`.
 
 [![Build Status](https://travis-ci.org/dkhamsing/DKScrollingTabController.svg?branch=master)](https://travis-ci.org/dkhamsing/DKScrollingTabController)
-[![Version](https://img.shields.io/cocoapods/v/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
+[![Version](https://img.shields.io/cocoapods/v/DKScrollingTabController.svg?style=flat)](https://cocoapods.org/pods/DKScrollingTabController)
 [![License](https://img.shields.io/cocoapods/l/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
 [![Platform](https://img.shields.io/cocoapods/p/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
 
@@ -92,13 +92,11 @@ class ViewController: UIViewController, DKScrollingTabControllerDelegate {
 DKScrollingTabController includes sample projects in the folders Demo-Objc and Demo-Swift.
 
 # Compatibility
-- This project uses ARC.
-- This project was tested with iOS 7 and iOS 8.
+This project was tested with iOS 9.
 
 # Contact
 - [github.com/dkhamsing](https://github.com/dkhamsing)
 - [twitter.com/dkhamsing](https://twitter.com/dkhamsing)
-- [Send a message](http://dkhamsing.tumblr.com/ask)
 
 # License
 DKScrollingTabController is available under the MIT license. See the [LICENSE](LICENSE) file for more info.

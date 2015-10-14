@@ -8,6 +8,8 @@
 
 
 @class DKScrollingTabController;
+
+/** DKScrollingTabController delegate. */
 @protocol DKScrollingTabControllerDelegate <NSObject>
 
 /**
@@ -21,6 +23,7 @@
 @end
 
 
+/** A scrolling tab controller alternative to UISegmentedControl. */
 @interface DKScrollingTabController : UIViewController
 
 /**

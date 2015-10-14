@@ -1,7 +1,7 @@
 Pod::Spec.new do |s| 
   s.name         = 'DKScrollingTabController'
 
-  s.version      = '1.2'
+  s.version      = '1.2.1'
 
   s.summary      = 'Scrolling Tab iOS Control.'
 
