@@ -28,7 +28,7 @@ class ViewController: UIViewController, DKScrollingTabControllerDelegate {
     }
         
     func ScrollingTabController(controller: DKScrollingTabController!, selection: UInt) {
-        print("tapped \(selection) \n")
+        print("tapped \(selection)", terminator: "\n")
     }
 
 }
