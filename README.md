@@ -3,7 +3,7 @@ DKScrollingTabController
 
 A scrolling tab controller alternative to `UISegmentedControl`.
 
-[![Build Status](https://travis-ci.org/dkhamsing/DKScrollingTabController.svg?branch=master)](https://travis-ci.org/dkhamsing/DKScrollingTabController)
+[![Build Status](https://api.travis-ci.org/dkhamsing/DKScrollingTabController.svg?branch=master)](https://travis-ci.org/dkhamsing/DKScrollingTabController)
 [![Version](https://img.shields.io/cocoapods/v/DKScrollingTabController.svg?style=flat)](https://cocoapods.org/pods/DKScrollingTabController)
 [![License](https://img.shields.io/cocoapods/l/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
 [![Platform](https://img.shields.io/cocoapods/p/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
@@ -18,7 +18,7 @@ Add the files in the DKScrollingTabController folder to your project.
 ## [CocoaPods](https://cocoapods.org/)
 
 ``` ruby
-platform :ios, '7.0'
+platform :ios, '8.0'
 pod 'DKScrollingTabController'
 ```
 
