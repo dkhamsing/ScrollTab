@@ -29,33 +29,29 @@ pod 'DKScrollingTabController'
 ```  objc
 #import "DKScrollingTabController.h" 
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        // Add controller as a child view controller (standard view controller containment)
-        DKScrollingTabController *tabController = [[DKScrollingTabController alloc] init];
-        [self addChildViewController:tabController];
-        [tabController didMoveToParentViewController:self];
-        [self.view addSubview:tabController.view];
-        
-        // Customize the tab controller (more options in DKScrollingTabController.h or check the demo)
-        tabController.view.frame = CGRectMake(0, 20, 320, 40);
-        tabController.buttonPadding = 23;
-        tabController.selection = @[@"zero", @"one", @"two", @"three", @"four",];
-        
-        // Set the delegate (conforms to DKScrollingTabControllerDelegate)
-        tabController.delegate = self;
-    }
-    return self;
-}
+  // ...
 
+  // Add controller as a child view controller (standard view controller containment)
+  DKScrollingTabController *tabController = [[DKScrollingTabController alloc] init];
+  [self addChildViewController:tabController];
+  [tabController didMoveToParentViewController:self];
+  [self.view addSubview:tabController.view];
+
+  // Customize the tab controller (more options in DKScrollingTabController.h or check the demo)
+  tabController.view.frame = CGRectMake(0, 20, 320, 40);
+  tabController.buttonPadding = 23;
+  tabController.selection = @[@"zero", @"one", @"two", @"three", @"four",];
+
+  // Set the delegate (conforms to DKScrollingTabControllerDelegate)
+  tabController.delegate = self;
+
+  // ...
 
 #pragma mark - DKScrollingTabControllerDelegate
 
 - (void)ScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
     NSLog(@"Selection controller action button with index=%@", @(selection));
 }
-
 ```
 
 ## Swift 
