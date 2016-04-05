@@ -112,16 +112,22 @@
         UIButton *button = self.buttons[selection.count-1];
         [self.buttonsScrollView setContentSize:CGSizeMake(button.frame.origin.x+button.frame.size.width +_firstButtonInset +inset, frame2.size.height)];
         
-        //TODO: removed for now, this breaks demo's 5th tab
-//        // If content's width is smaller than the view's width, put it in the center.
-//        if (self.buttonsScrollView.contentSize.width < self.view.frame.size.width)
-//        {
-//            [self.buttonsScrollView setFrame:CGRectMake(self.buttonsScrollView.frame.origin.x,
-//                                                        self.buttonsScrollView.frame.origin.y,
-//                                                        self.buttonsScrollView.contentSize.width,
-//                                                        self.buttonsScrollView.frame.size.height)];
-//            self.buttonsScrollView.center = self.view.center;
-//        }
+        // If scroll view content width is smaller than the view's width, stretch it and distribute space evenly between the buttons
+        if (self.buttonsScrollView.contentSize.width < self.view.frame.size.width)
+        {
+            [self.buttonsScrollView setFrame:CGRectMake(self.buttonsScrollView.frame.origin.x,
+                                                        self.buttonsScrollView.frame.origin.y,
+                                                        self.view.frame.size.width,
+                                                        self.buttonsScrollView.frame.size.height)];
+            self.buttonsScrollView.center = self.view.center;
+            CGFloat additionalButtonWidth = (self.view.frame.size.width - self.buttonsScrollView.contentSize.width)/[self.buttons count];
+            
+            for (int i = 0; i < [self.buttons count]; i++) {
+                UIButton *button = self.buttons[i];
+                button.frame = CGRectMake(button.frame.origin.x + i*additionalButtonWidth, button.frame.origin.y, button.frame.size.width + additionalButtonWidth, button.frame.size.height);
+            }
+        }
+
     }
     
     if (self.buttons.count > self.startingIndex)
