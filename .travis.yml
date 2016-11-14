@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: Demo-Objc/Demo.xcodeproj
-xcode_scheme: Demo
+xcode_project: Demo-Objc/ScrollTab-Demo.xcodeproj
+xcode_scheme: ScrollTab-Demo
 osx_image: xcode7
 xcode_sdk: iphonesimulator9.0
