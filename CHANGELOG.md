@@ -1,6 +1,12 @@
-# DKScrollingTabController Changelog
+# ScrollTab Changelog
 
-https://github.com/dkhamsing/DKScrollingTabController/releases
+https://github.com/dkhamsing/ScrollTab/releases
+
+## 2.0.0
+
+- Rename to `ScrollTab`
+- Complete rewrite, ScrollTab is now a subclass of `UIView` and uses `ScrollTabConfig` to simplify states
+- Not compatible with `1.x`
 
 ## 1.2.1
 
@@ -32,7 +38,6 @@ https://github.com/dkhamsing/DKScrollingTabController/releases
 - Add underline indicator offset property
 - Misc. fixes
 
-## 1.0 
+## 1.0
 
 - Initial version
-

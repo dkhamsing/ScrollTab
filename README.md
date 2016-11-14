@@ -1,98 +1,60 @@
-DKScrollingTabController
-========================
+# ScrollTab
 
-A scrolling tab controller alternative to `UISegmentedControl`.
-
-[![Build Status](https://api.travis-ci.org/dkhamsing/DKScrollingTabController.svg?branch=master)](https://travis-ci.org/dkhamsing/DKScrollingTabController)
-[![Version](https://img.shields.io/cocoapods/v/DKScrollingTabController.svg?style=flat)](https://cocoapods.org/pods/DKScrollingTabController)
-[![License](https://img.shields.io/cocoapods/l/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
-[![Platform](https://img.shields.io/cocoapods/p/DKScrollingTabController.svg?style=flat)](http://cocoadocs.org/docsets/DKScrollingTabController)
+A scroll tab alternative to `UISegmentedControl`.
 
 ![](Assets/demo.gif)
 
-# Installation
-
-## Manual
-Add the files in the DKScrollingTabController folder to your project.
+# Install
 
 ## [CocoaPods](https://cocoapods.org/)
 
 ``` ruby
-platform :ios, '8.0'
-pod 'DKScrollingTabController'
+pod 'ScrollTab'
 ```
+
+## Manual
+
+Add the files in the `ScrollTab` folder to your project.
 
 # Usage
 
-## Objective-C
-
 ```  objc
-#import "DKScrollingTabController.h" 
+#import "ScrollTab.h"
 
   // ...
 
-  // Add controller as a child view controller (standard view controller containment)
-  DKScrollingTabController *tabController = [[DKScrollingTabController alloc] init];
-  [self addChildViewController:tabController];
-  [tabController didMoveToParentViewController:self];
-  [self.view addSubview:tabController.view];
+  ScrollTab *tab = [[ScrollTab alloc] init];
 
-  // Customize the tab controller (more options in DKScrollingTabController.h or check the demo)
-  tabController.view.frame = CGRectMake(0, 20, 320, 40);
-  tabController.buttonPadding = 23;
-  tabController.selection = @[@"zero", @"one", @"two", @"three", @"four",];
+  ScrollTabConfig *config = [[ScrollTabConfig alloc] init];
+  config.items = @[@"zero", @"one", @"two", @"three", @"four"];
 
-  // Set the delegate (conforms to DKScrollingTabControllerDelegate)
-  tabController.delegate = self;
+  tab.selected = ^(NSString *noop, NSInteger index) {
+      NSLog(@"selected tab with index %@", @(index));
+  };
+  tab.config = config;
 
+  // Layout
+  [self.view addSubview:tab];
   // ...
-
-#pragma mark - DKScrollingTabControllerDelegate
-
-- (void)ScrollingTabController:(DKScrollingTabController *)controller selection:(NSUInteger)selection {
-    NSLog(@"Selection controller action button with index=%@", @(selection));
-}
 ```
 
-## Swift 
+## Customize
 
-``` swift
-class ViewController: UIViewController, DKScrollingTabControllerDelegate {
-
-    let tabController = DKScrollingTabController()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.addChildViewController(tabController)
-        tabController.didMoveToParentViewController(self)
-        self.view.addSubview(tabController.view)
-        tabController.view.frame = CGRectMake(0, 20, 320, 40)
-        tabController.buttonPadding = 25
-        tabController.selection = ["zero", "one", "two", "three", "four"]
-        tabController.delegate = self
-    }
-        
-    func ScrollingTabController(controller: DKScrollingTabController!, selection: UInt) {
-        print("tapped \(selection) \n")
-    }
-
-}
-```
-
-## Customization
-- Change the controller's padding, font, colors and [more](https://github.com/dkhamsing/DKScrollingTabController/blob/master/DKScrollingTabController/DKScrollingTabController.h).
-- Set `layoutIsVertical` to YES to show the controller vertically.
+Change the control's layout, item font/colors and more using `ScrollTabConfig`.
 
 # Demo
-DKScrollingTabController includes sample projects in the folders Demo-Objc and Demo-Swift.
+
+`ScrollTab` includes a sample project.
 
 # Compatibility
-This project was tested with iOS 9.
+
+This project was tested with iOS 10, see the [`1.x` tags](releases) for older versions.
 
 # Contact
+
 - [github.com/dkhamsing](https://github.com/dkhamsing)
 - [twitter.com/dkhamsing](https://twitter.com/dkhamsing)
 
 # License
-DKScrollingTabController is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+
+`ScrollTab` is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
