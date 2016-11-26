@@ -27,11 +27,11 @@ Add the files in the `ScrollTab` folder to your project.
 
   ScrollTabConfig *config = [[ScrollTabConfig alloc] init];
   config.items = @[@"zero", @"one", @"two", @"three", @"four"];
-
+  tab.config = config;
+  
   tab.selected = ^(NSString *noop, NSInteger index) {
       NSLog(@"selected tab with index %@", @(index));
   };
-  tab.config = config;
 
   // Layout
   [self.view addSubview:tab];
