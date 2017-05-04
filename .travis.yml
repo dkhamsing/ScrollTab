@@ -1,5 +1,4 @@
 language: objective-c
-xcode_project: Demo-Objc/ScrollTab-Demo.xcodeproj
-xcode_scheme: ScrollTab-Demo
-osx_image: xcode7
-xcode_sdk: iphonesimulator9.0
+osx_image: xcode8.3
+script:
+  - xcodebuild build -project Demo-Objc/ScrollTab-Demo.xcodeproj -scheme ScrollTab-Demo -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' | xcpretty -s
