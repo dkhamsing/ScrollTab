@@ -23,18 +23,18 @@ Add the files in the `ScrollTab` folder to your project.
 
   // ...
 
-  ScrollTab *tab = [[ScrollTab alloc] init];
-
   ScrollTabConfig *config = [[ScrollTabConfig alloc] init];
   config.items = @[@"zero", @"one", @"two", @"three", @"four"];
-  tab.config = config;
-  
+
+  ScrollTab *tab = [[ScrollTab alloc] init];
+  tab.config = config;  
   tab.selected = ^(NSString *noop, NSInteger index) {
       NSLog(@"selected tab with index %@", @(index));
   };
 
   // Layout
   [self.view addSubview:tab];
+  
   // ...
 ```
 
